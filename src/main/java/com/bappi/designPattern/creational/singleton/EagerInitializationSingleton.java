@@ -13,13 +13,13 @@ package com.bappi.designPattern.creational.singleton;
  */
 public class EagerInitializationSingleton {
 
-    // static final instance created, that is created at the time of class loading.
+    /* static final instance created, that is created at the time of class loading.*/
     private static final EagerInitializationSingleton instance = new EagerInitializationSingleton();
 
-    // private constructor create, to avoid other classes can't create object
+   /* private constructor create, to avoid other classes can't create object */
     private EagerInitializationSingleton(){ }
 
-    // This static method returns the instance
+    /*This static method returns the instance*/
     public static EagerInitializationSingleton getInstance(){
         return instance;
     }
