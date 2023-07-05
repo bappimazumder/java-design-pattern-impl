@@ -7,24 +7,22 @@
 
 package com.bappi.designPattern.creational.singleton;
 /*
-* Lazy initialization method to implement the singleton pattern creates the instance in
-* the global access method.
+* A simple way to create a thread-safe singleton class is to make the global access method
+*  synchronized so that only one thread can execute this method at a time.It will remove the
+*  multithreaded problem
 * */
-public class LazyInitializationSingleton {
-
+public class ThreadSafeSingleton {
     /*static instance declared, but not created*/
-    private static LazyInitializationSingleton instance;
+    private static ThreadSafeSingleton instance;
 
     /* private constructor create, to avoid other classes can't create object */
-    private LazyInitializationSingleton(){}
+    private ThreadSafeSingleton(){}
 
     /* This method create the new instance if its null in first time and returns the instance*/
-    public static LazyInitializationSingleton getInstance(){
+    public static synchronized ThreadSafeSingleton getInstance(){
         if(instance == null){
-            instance = new LazyInitializationSingleton();
+            instance = new ThreadSafeSingleton();
         }
         return instance;
     }
-
-
 }
