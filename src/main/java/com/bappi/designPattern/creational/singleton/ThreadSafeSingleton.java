@@ -41,7 +41,6 @@ public class ThreadSafeSingleton {
                     instance = new ThreadSafeSingleton();
                 }
             }
-
         }
         return instance;
     }
